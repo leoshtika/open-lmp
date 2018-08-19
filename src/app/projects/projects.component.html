@@ -1,10 +1,27 @@
 <div id="main-container">
-  <h1>
-    List of projects!
-  </h1>
-  <ul>
+  <h1>Projects</h1>
+  <mat-card class="project-card" *ngFor="let project of projects | async">
+      <mat-card-title>{{ project.name }}</mat-card-title>
+      <mat-card-subtitle>{{ project.description }}</mat-card-subtitle>
+    <mat-card-content>
+      <p class="translated-percentage">
+        {{ project.translated }}%
+      </p>
+      <p>
+        <span *ngFor="let language of project.languages" class="flag">
+            <img *ngIf="language" src="assets/{{ language }}.png" matTooltip="{{language}} language" />
+        </span>
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button><strong>{{ project.strings }}</strong> Strings</button>
+      <button mat-button><strong>{{ project.contributors }}</strong> Contributors</button>
+    </mat-card-actions>
+  </mat-card>
+  <div style="clear:both;"></div>
+  <!-- <ul>
     <li *ngFor="let project of projects | async">
       {{ project | json }}
     </li>
-  </ul>
+  </ul> -->
 </div>

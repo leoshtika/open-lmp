@@ -1,0 +1,6 @@
+{
+  "appId": "eu.websapiens.openlmp",
+  "appName": "openLMP",
+  "bundledWebRuntime": false,
+  "webDir": "dist/open-lmp"
+}

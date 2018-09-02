@@ -1,0 +1,15 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+} 
+.example-container > * {
+    width: 100%;
+}
+.page-title {
+    float:left;
+    margin-top:0;
+}
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+}
